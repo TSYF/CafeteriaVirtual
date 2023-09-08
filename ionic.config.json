@@ -1,0 +1,7 @@
+{
+  "name": "cafeteria-virtual",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
