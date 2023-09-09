@@ -22,6 +22,18 @@ const routes: Routes = [
   {
     path: 'products',
     loadChildren: () => import('./products/products.module').then( m => m.ProductsPageModule)
+  },
+  {
+    path: 'cardform',
+    loadChildren: () => import('./cardform/cardform.module').then( m => m.CardformPageModule)
+  },
+  {
+    path: 'qr',
+    loadChildren: () => import('./qr/qr.module').then( m => m.QrPageModule)
+  },
+  {
+    path: 'pisos',
+    loadChildren: () => import('./pisos/pisos.module').then( m => m.PisosPageModule)
   }
 ];
 

@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
     // { title: 'Pedidos', url: '/folder/archived', icon: 'archive' },
     // { title: 'Asociar tarjeta', url: '/folder/trash', icon: 'journal' },
     // { title: 'Ayuda', url: '/folder/spam', icon: 'help' },
+    { title: 'Asociar tarjeta', url: 'cardform', icon: 'journal' },
     { title: 'Ingresar', url: '/auth/signIn', icon: 'heart' },
     { title: 'Productos', url: '/products', icon: 'journal' },
   ];
