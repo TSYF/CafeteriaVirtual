@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
     { title: 'Configuración', url: '/folder/outbox', icon: 'cog' },
     { title: 'Favoritos', url: '/folder/favorites', icon: 'heart' },
     { title: 'Pedidos', url: '/folder/archived', icon: 'archive' },
-    { title: 'Asociar tarjeta', url: '/folder/trash', icon: 'journal' },
+    { title: 'Asociar tarjeta', url: 'cardform', icon: 'journal' },
     { title: 'Ayuda', url: '/folder/spam', icon: 'help' },
     { title: 'Ingresar', url: '/auth/signIn', icon: 'heart' },
     { title: 'Registrarse', url: '/auth/signUp', icon: 'heart' },

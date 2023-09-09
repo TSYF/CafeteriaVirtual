@@ -1,0 +1,75 @@
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row >
+      <ion-col >
+          <h3 class="ion-text-center">Vinculación </h3>
+      </ion-col>
+    </ion-row>
+
+      <ion-row>
+        <ion-col size="11">
+        <ion-item >
+            <ion-input label="" position="floating">
+              Nombre del Titular:
+            </ion-input >
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="11">
+          <ion-item >
+            <ion-input label="" position="floating">
+              Alias de Tarjeta:
+            </ion-input >
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-item >
+            <ion-input label="" position="floating">
+              CCV:
+            </ion-input >
+          </ion-item>
+        </ion-col>
+        <ion-col size="7">
+          <ion-item >
+            <ion-input label="" position="floating">
+              Fecha de Caducidad:
+            </ion-input >
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="11">
+          <ion-item >
+            <ion-input label="" position="floating">
+              Numero de Tarjeta:
+            </ion-input >
+          </ion-item>
+        </ion-col>
+      </ion-row>  
+      
+      <ion-row>
+        <ion-toolbar>
+          <ion-col offset="1" size="3">
+            <ion-button  color="danger" fill="solid" routerLink="/products">
+              Volver
+              <ion-icon slot="end" name="arrow-back-circle"></ion-icon>
+            </ion-button>      
+          </ion-col>
+          <ion-col offset="1" size="3">
+            <ion-button color="success" fill="solid" routerLink="/qr">
+              Guardar
+              <ion-icon slot="end" name="checkmark-circle-sharp"></ion-icon>
+            </ion-button>      
+          </ion-col>
+        </ion-toolbar>
+      </ion-row>  
+    </ion-grid>
+    
+</ion-content>
