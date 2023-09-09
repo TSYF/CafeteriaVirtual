@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductsService } from '../services/products.service';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
   selector: 'app-products',
@@ -22,7 +22,12 @@ export class ProductsPage implements OnInit {
   }
 
   public goToProductDetail(product: Product) {
-    alert("TODO. WIP");
+    const navigationExtras: NavigationExtras = {
+      state: {
+        product
+      }
+    };
+    this.router.navigate([`products/product`], navigationExtras);
   }
 
 }
