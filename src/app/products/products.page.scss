@@ -1,0 +1,16 @@
+.products {
+    &__product {
+
+        cursor: pointer;
+        transition: opacity .25s ease;
+    
+        & + & {
+            margin-top: .5rem;
+            border-top: #C2C2C2 1px solid;
+        }
+    
+        &:hover {
+            opacity: .8;
+        }
+    }
+}
