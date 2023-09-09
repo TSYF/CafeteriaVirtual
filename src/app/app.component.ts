@@ -7,14 +7,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   public appPages = [
-    { title: 'Menú cafetería', url: '/folder/inbox', icon: 'restaurant' },
-    { title: 'Configuración', url: '/folder/outbox', icon: 'cog' },
-    { title: 'Favoritos', url: '/folder/favorites', icon: 'heart' },
-    { title: 'Pedidos', url: '/folder/archived', icon: 'archive' },
-    { title: 'Asociar tarjeta', url: '/folder/trash', icon: 'journal' },
-    { title: 'Ayuda', url: '/folder/spam', icon: 'help' },
+    { title: 'Inicio', url: '/home', icon: 'restaurant' },
+    // { title: 'Configuración', url: '/folder/outbox', icon: 'cog' },
+    // { title: 'Favoritos', url: '/folder/favorites', icon: 'heart' },
+    // { title: 'Pedidos', url: '/folder/archived', icon: 'archive' },
+    // { title: 'Asociar tarjeta', url: '/folder/trash', icon: 'journal' },
+    // { title: 'Ayuda', url: '/folder/spam', icon: 'help' },
     { title: 'Ingresar', url: '/auth/signIn', icon: 'heart' },
-    { title: 'Registrarse', url: '/auth/signUp', icon: 'heart' },
+    { title: 'Productos', url: '/products', icon: 'journal' },
   ];
   public labels = ['Productos destacados', 'Cafeterias', 'Notas'];
 
