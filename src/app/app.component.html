@@ -9,22 +9,23 @@
       <ion-list>
         <ion-list-header>Cafetería Virtual</ion-list-header>
         <ion-note>info@cafeteriavirtual.com</ion-note>
-        <ion-item
-          *ngFor="let page of appPages; let i = index"
-          routerDirection="root"
-          [routerLink]="[page.url]"
-          lines="none"
-          [detail]="false"
-          routerLinkActive="selected"
-        >
-          <ion-icon
-            aria-hidden="true"
-            slot="start"
-            [ios]="page.icon + '-outline'" 
-            [md]="page.icon + '-sharp'"
-          ></ion-icon>
-          <ion-label>{{ page.title }}</ion-label>
-        </ion-item>
+        <ion-menu-toggle *ngFor="let page of appPages; let i = index">
+          <ion-item
+            routerDirection="root"
+            [routerLink]="[page.url]"
+            lines="none"
+            [detail]="false"
+            routerLinkActive="selected"
+          >
+            <ion-icon
+              aria-hidden="true"
+              slot="start"
+              [ios]="page.icon + '-outline'" 
+              [md]="page.icon + '-sharp'"
+            ></ion-icon>
+            <ion-label>{{ page.title }}</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
       </ion-list>
     </ion-content>
   </ion-menu>
