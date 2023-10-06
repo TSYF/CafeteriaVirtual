@@ -80,7 +80,7 @@ devDependencies:
     specifier: ^16.0.0
     version: 16.1.2(eslint@7.32.0)(typescript@5.0.4)
   '@angular/cli':
-    specifier: ^16.0.0
+    specifier: 16.2.1
     version: 16.2.1
   '@angular/compiler-cli':
     specifier: ^16.0.0
