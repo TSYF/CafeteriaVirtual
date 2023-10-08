@@ -4,13 +4,13 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home ',
+    redirectTo: 'auth/sign-in ',
     pathMatch: 'full'
   },
-  {
-    path: 'home',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
+  // {
+  //   path: 'home',
+  //   loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+  // },
   {
     path: 'auth',
     loadChildren: () => import('./auth/sign-in/sign-in.module').then( m => m.SignInPageModule)
@@ -34,7 +34,12 @@ const routes: Routes = [
   {
     path: 'pisos',
     loadChildren: () => import('./pisos/pisos.module').then( m => m.PisosPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   }
+
 ];
 
 @NgModule({

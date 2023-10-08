@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { SignInPageRoutingModule } from './sign-in-routing.module';
+import { ForgotPasswordPageRoutingModule } from './forgot-password-routing.module';
 
-import { SignInPage } from './sign-in.page';
+import { ForgotPasswordPage } from './forgot-password.page';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    SignInPageRoutingModule,
-    SharedModule  //Se importa con todos los componentes que tiene a su disposición
+    ForgotPasswordPageRoutingModule,
+    SharedModule
   ],
-  declarations: [SignInPage]
+  declarations: [ForgotPasswordPage]
 })
-export class SignInPageModule {}
+export class ForgotPasswordPageModule {}

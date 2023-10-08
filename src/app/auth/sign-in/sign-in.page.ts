@@ -18,5 +18,8 @@ export class SignInPage implements OnInit {
 
   ngOnInit() {
   }
-
+  
+  submit(){
+    console.log(this.form.value);
+  }
 }

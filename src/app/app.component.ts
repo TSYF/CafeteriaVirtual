@@ -7,7 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent implements OnInit{
   public appPages = [
-    { title: 'Inicio', url: '/home', icon: 'restaurant' },
+    { title: 'Inicio', url: '/auth/signIn', icon: 'restaurant' },
     { title: 'Configuración', url: '/folder/outbox', icon: 'cog' },
     { title: 'Favoritos', url: '/folder/favorites', icon: 'heart' },
     { title: 'Pedidos', url: '/folder/archived', icon: 'archive' },

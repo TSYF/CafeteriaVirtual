@@ -19,7 +19,7 @@ import { ProductsService } from './services/products.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(),
+    IonicModule.forRoot({mode:'md'}),
     AppRoutingModule,
     FormsModule
   ],
