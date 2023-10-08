@@ -74,6 +74,15 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+  
+  /** CV **/  
+	--ion-color-cv: #073763;
+	--ion-color-cv-rgb: 7,55,99;
+	--ion-color-cv-contrast: #ffffff;
+	--ion-color-cv-contrast-rgb: 255,255,255;
+	--ion-color-cv-shade: #063057;
+	--ion-color-cv-tint: #204b73;
+  
 }
 
 @media (prefers-color-scheme: dark) {
