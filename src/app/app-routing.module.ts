@@ -4,7 +4,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'auth/sign-in ',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   // {
@@ -13,11 +13,11 @@ const routes: Routes = [
   // },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/sign-in/sign-in.module').then( m => m.SignInPageModule)
+    loadChildren: () => import('./auth/auth/auth.module').then( m => m.AuthPageModule)
   },
   {
-    path: 'auth',
-    loadChildren: () => import('./auth/sign-up/sign-up.module').then( m => m.SignUpPageModule)
+    path: 'sign-up',
+    loadChildren: () => import('./auth/auth/sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
   {
     path: 'products',
@@ -37,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'forgot-password',
-    loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
+    loadChildren: () => import('./auth/auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   }
 
 ];
