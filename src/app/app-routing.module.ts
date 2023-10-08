@@ -7,17 +7,9 @@ const routes: Routes = [
     redirectTo: 'auth',
     pathMatch: 'full'
   },
-  // {
-  //   path: 'home',
-  //   loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  // },
   {
     path: 'auth',
     loadChildren: () => import('./auth/auth/auth.module').then( m => m.AuthPageModule)
-  },
-  {
-    path: 'sign-up',
-    loadChildren: () => import('./auth/auth/sign-up/sign-up.module').then( m => m.SignUpPageModule)
   },
   {
     path: 'products',
@@ -35,10 +27,7 @@ const routes: Routes = [
     path: 'pisos',
     loadChildren: () => import('./pisos/pisos.module').then( m => m.PisosPageModule)
   },
-  {
-    path: 'forgot-password',
-    loadChildren: () => import('./auth/auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
-  }
+
 
 ];
 
