@@ -29,6 +29,15 @@ export class ForgotPasswordPage implements OnInit {
 
       this.firebaseSvc.sendRecoveryEmail(this.form.value.email).then( res => {
         
+        this.utilsSvc.presentToast({
+          message: 'Correo enviado exitosamente',
+          duration: 2500,
+          color: 'primary',
+          position: 'middle',
+          icon: 'mail-outline'
+        });
+        this.utilsSvc.routerLink('/auth');
+        this.form.reset();
 
       }).catch(error => {
         console.log(error);
@@ -38,7 +47,7 @@ export class ForgotPasswordPage implements OnInit {
           color: 'primary',
           position: 'middle',
           icon: 'alert-circle-outline'
-        })
+        });
       }).finally(() =>{
         loading.dismiss();
       })

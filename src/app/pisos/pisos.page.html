@@ -1,14 +1,21 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>pisos</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+
   <ion-grid>
-    <ion-row >
+    <ion-row class="ion-text-end">
       <ion-col >
-          <h3 class="ion-text-center">Cafetería Virtual</h3>
+          <ion-button (click)="signOut()">
+            Cerrar Sesion
+          </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-align-items-center">
+      <ion-col >
+        <app-logo></app-logo>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1 class="ion-text-center" style="color: #428cff;"><Strong>Pisos</Strong></h1>
       </ion-col>
     </ion-row>
     <ion-row>

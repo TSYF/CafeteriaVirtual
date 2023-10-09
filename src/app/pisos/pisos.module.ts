@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PisosPageRoutingModule } from './pisos-routing.module';
 
 import { PisosPage } from './pisos.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PisosPageRoutingModule
+    PisosPageRoutingModule,
+    SharedModule
   ],
   declarations: [PisosPage]
 })

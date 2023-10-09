@@ -14,6 +14,8 @@ export class AppComponent implements OnInit{
     { title: 'Favoritos', url: '/folder/favorites', icon: 'heart' },
     { title: 'Ayuda', url: '/folder/spam', icon: 'help' },
     { title: 'Configuración', url: '/folder/outbox', icon: 'settings' },
+    { title: 'pisos', url: '/pisos', icon: 'floor' },
+    
   ];
   public labels = ['Productos destacados', 'Cafeterias', 'Notas'];
 
