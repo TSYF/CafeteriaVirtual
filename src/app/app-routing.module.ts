@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'pisos',
     loadChildren: () => import('./pisos/pisos.module').then( m => m.PisosPageModule)
+  },  {
+    path: 'profile',
+    loadChildren: () => import('./auth/main/profile/profile.module').then( m => m.ProfilePageModule)
   },
+
 
 
 ];
