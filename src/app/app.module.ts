@@ -11,6 +11,11 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsService } from './services/products.service';
 
+// ==========Firebase===========
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +26,8 @@ import { ProductsService } from './services/products.service';
     BrowserModule,
     IonicModule.forRoot({mode:'md'}),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [
     ProductsService,
