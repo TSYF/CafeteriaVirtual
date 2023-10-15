@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
+import { FirebaseService } from '../services/firebase.service';
+import { UtilsService } from '../services/utils.service';
 
 @Component({
   selector: 'app-pisos',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PisosPage implements OnInit {
 
-  constructor() { }
+  firebaseSvc = inject(FirebaseService);
+  utilsSvc = inject(UtilsService);
 
   ngOnInit() {
+  }
+  signOut(){
+    this.firebaseSvc.signOut();
   }
 
 }

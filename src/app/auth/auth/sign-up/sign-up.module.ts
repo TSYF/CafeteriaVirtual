@@ -4,19 +4,19 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { PisosPageRoutingModule } from './pisos-routing.module';
+import { SignUpPageRoutingModule } from './sign-up-routing.module';
 
-import { PisosPage } from './pisos.page';
-import { SharedModule } from '../shared/shared.module';
+import { SignUpPage } from './sign-up.page';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PisosPageRoutingModule,
+    SignUpPageRoutingModule,
     SharedModule
   ],
-  declarations: [PisosPage]
+  declarations: [SignUpPage]
 })
-export class PisosPageModule {}
+export class SignUpPageModule {}

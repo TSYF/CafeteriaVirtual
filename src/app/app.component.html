@@ -1,4 +1,4 @@
-<ion-app>
+<ion-app >
   <ion-menu contentId="main-content">
     <ion-header>
       <ion-toolbar>
@@ -7,39 +7,50 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-list>
-        <ion-list-header>Cafetería Virtual</ion-list-header>
+        <ion-list-header>Cafeteria virtual</ion-list-header>
         <ion-note>info@cafeteriavirtual.com</ion-note>
-        <ion-menu-toggle *ngFor="let page of appPages; let i = index">
-          <ion-item
-            routerDirection="root"
-            [routerLink]="[page.url]"
-            lines="none"
-            [detail]="false"
-            routerLinkActive="selected"
-          >
-            <ion-icon
-              aria-hidden="true"
-              slot="start"
-              [ios]="page.icon + '-outline'" 
-              [md]="page.icon + '-sharp'"
-            ></ion-icon>
-            <ion-label>{{ page.title }}</ion-label>
-          </ion-item>
-        </ion-menu-toggle>
+        <ion-item
+          *ngFor="let page of appPages; let i = index"
+          routerDirection="root"
+          [routerLink]="[page.url]"
+          lines="none"
+          [detail]="false"
+          routerLinkActive="selected"
+        >
+          <ion-icon 
+            aria-hidden="true"
+            slot="start"
+            [ios]="page.icon + '-outline'" 
+            [md]="page.icon + '-sharp'"
+          ></ion-icon>
+          <ion-label>{{ page.title }}</ion-label>
+        </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
-  <div class="ion-page" id="main-content">
-    <ion-header>
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <ion-router-outlet id="main-content"></ion-router-outlet>
-    </ion-content>
-  </div>
+  
+
+    <div class="ion-page " id="main-content">
+      
+        <ion-header ion-header >
+            <ion-toolbar color="cv" class="h-tool">
+              
+                <ion-buttons slot="start" >
+                  <ion-menu-button></ion-menu-button>
+                </ion-buttons>        
+
+                <ion-title >                 
+                  <ion-img 
+                    src="assets/icon/duoc-logo.png" 
+                    alt="Logo duoc" 
+                    style="width: 210px"></ion-img>                       
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+      
+      <ion-content class="ion-padding">
+        <ion-router-outlet id="main-content"></ion-router-outlet>
+      </ion-content>
+    </div>
+  
 </ion-app>

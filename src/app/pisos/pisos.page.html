@@ -1,50 +1,29 @@
-<ion-content [fullscreen]="true" class="ion-padding">
-  <ion-grid>
-    <ion-row >
-      <ion-col >
-          <h1
-            class="ion-text-center"
-            style="font-size: 2.5rem;"
-          >Cafetería Virtual</h1>
-          <hr style="background: #C2C2C2;">
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <div
-          class="ion-text-center"
-          style="
-            font-size: 2rem;
-            padding: 8px;
-          "
-        >
-          Cafeteria 1er Piso
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col offset="4">
-        <ion-button color="primary" routerLink="/products">ingresar</ion-button>
-      </ion-col>
-    </ion-row>
+<ion-content >
+  <div class="d-flex-center">
+    <div class="auth-form">
+      <div class="ion-text-end">
+        <ion-button (click)="signOut()">
+          Cerrar Sesion
+        </ion-button>
+      </div>
 
-    <ion-row>
-      <ion-col>
-        <div
-          class="ion-text-center"
-          style="
-            font-size: 2rem;
-            padding: 8px;
-          "
-        >
-          Cafeteria 3er Piso
-        </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col offset="4">
-        <ion-button color="primary" >ingresar</ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <app-logo></app-logo>
+
+      <h1 class="ion-text-center" style="color: #428cff;"><Strong>Pisos</Strong></h1>
+      
+      <div class="ion-text-center pisos marg-bot">
+        Cafeteria 1er Piso
+      </div>
+      
+      <ion-button color="primary" routerLink="/products" class="marg-bot">ingresar</ion-button>
+      
+      <div class="ion-text-center pisos marg-bot marg-top"
+      >
+        Cafeteria 3er Piso
+      </div>
+      
+      <ion-button color="primary" >ingresar</ion-button>
+      
+    </div>
+    </div>
 </ion-content>
