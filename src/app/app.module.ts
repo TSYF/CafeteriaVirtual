@@ -1,3 +1,5 @@
+import { IonicStorageModule } from '@ionic/storage-angular'; //import necesario para usar storage
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -23,6 +25,7 @@ import { environment } from 'src/environments/environment';
     IonicModule.forRoot({mode:'md'}),
     AppRoutingModule,
     FormsModule,
+    IonicStorageModule.forRoot(), // import de ionic storage
     AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [

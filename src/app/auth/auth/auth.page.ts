@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
+import { Storage } from '@ionic/storage-angular'; // import para crear metodos de storage
 
 @Component({
   selector: 'app-auth',
@@ -19,9 +20,16 @@ export class AuthPage implements OnInit {
   firebaseSvc = inject(FirebaseService);
   utilsSvc = inject(UtilsService);
 
-  ngOnInit() {
+  constructor(private storage: Storage){  //agregar Storage al constructor
+
   }
-  
+
+  async ngOnInit() { //convertir el inicializador en asincrono
+
+    await this.storage.create();//Metodos de storage deben ser asincronos
+
+  }  
+
   async submit(){
     if (this.form.valid) {
       
@@ -45,6 +53,19 @@ export class AuthPage implements OnInit {
         loading.dismiss();
       })
     }
+
+  }
+  
+  //Guardar información en el storage
+  async saveInStorage(){
+    this.storage.set('nombreUsuario','Thony Funeke')
+    // this.storage.get('nombreUsuario','Sebastian')
+    
+  }
+  //Mostrar informacion del storage
+  async showStorage(){
+    let name = await this.storage.get("nombreUsuario");
+    console.log("El nombre guardado es: "+ name)
   }
 
   async getUserInfo(uid: string){
