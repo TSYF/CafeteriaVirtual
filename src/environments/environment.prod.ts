@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
+  
   firebaseConfig : {
     apiKey: "AIzaSyCzKemj1B0Sn6SwKQAg4n-avpGV7tYURH8",
     authDomain: "cafeteria-virtual-duoc.firebaseapp.com",

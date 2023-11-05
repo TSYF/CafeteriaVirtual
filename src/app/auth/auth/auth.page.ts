@@ -5,11 +5,14 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 import { UtilsService } from 'src/app/services/utils.service';
 import { Storage } from '@ionic/storage-angular'; // import para crear metodos de storage
 
+
 @Component({
   selector: 'app-auth',
   templateUrl: './auth.page.html',
   styleUrls: ['./auth.page.scss'],
 })
+
+
 export class AuthPage implements OnInit {
   
   form = new FormGroup({
@@ -39,12 +42,13 @@ export class AuthPage implements OnInit {
       this.firebaseSvc.signIn(this.form.value as User).then(res => {
         
         this.getUserInfo(res.user.uid);
+        console.log(res);
 
       }).catch(error => {
         console.log(error);
         this.utilsSvc.presentToast({
           message: error.message,
-          duration: 2500,
+          duration: 3500,
           color: 'primary',
           position: 'middle',
           icon: 'alert-circle-outline'
