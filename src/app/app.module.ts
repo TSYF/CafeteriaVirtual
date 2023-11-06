@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { ProductsService } from './services/products.service';
+import { HttpClientModule } from '@angular/common/http';
 
 // ==========Firebase===========
 
@@ -33,6 +34,7 @@ firebase.initializeApp(environment.firebaseConfig);
     BrowserModule,
     IonicModule.forRoot({mode:'md'}),
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     IonicStorageModule.forRoot(), // import de ionic storage
     AngularFireModule.initializeApp(environment.firebaseConfig),

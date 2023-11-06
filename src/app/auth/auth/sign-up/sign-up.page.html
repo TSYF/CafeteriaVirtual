@@ -1,7 +1,15 @@
 <ion-content>
   <div class="d-flex-center">
+    
+    
+    
     <!-- "keypress" = evento -->
     <form [formGroup]="form" class="auth-form" (ngSubmit)="submit()" (keypress.enter)="submit()">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button>back</ion-back-button>
+        </ion-buttons>  
+      </ion-toolbar>
       
       <app-logo></app-logo>
       <h1 style="color: #428cff;"><Strong>Registro</Strong></h1>

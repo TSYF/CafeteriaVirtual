@@ -45,7 +45,7 @@ export class AuthPage implements OnInit {
         console.log(res);
 
       }).catch(error => {
-        console.log(error);
+        // console.log(error);
         this.utilsSvc.presentToast({
           message: error.message,
           duration: 3500,
