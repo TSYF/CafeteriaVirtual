@@ -12,40 +12,47 @@
         "img" : "https://dondelanegra.cl/wp-content/uploads/2023/04/Pepsi-Zero-Lata.jpg",
         "active" : true
       },
+
       {
         "name" : "Pan aliado",
         "price" : 1050,
-        "img" : "https://desayunodulce.com/wp-content/uploads/2020/02/foto-1-9.jpg",
+        "description": "Pan hallulla con jamon y queso",
+        "urlImage" : "https://desayunodulce.com/wp-content/uploads/2020/02/foto-1-9.jpg",
         "active" : true
       },
       {
         "name" : "Sopaipilla",
         "price" : 350,
-        "img" : "https://tofuu.getjusto.com/orioneat-local/resized2/fxNdP6wHHTxPP9Ss6-1200-1200.webp",
+        "description": "sopaipilla frita",
+        "urlImage" : "https://tofuu.getjusto.com/orioneat-local/resized2/fxNdP6wHHTxPP9Ss6-1200-1200.webp",
         "active" : true
       },
       {
         "name" : "Empanada",
         "price" : 1800,
-        "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Famasanderiamanjarescalama%2Fphotos%2Fa.353100831551602%2F856612431200437%2F%3Ftype%3D3&psig=AOvVaw2lCqL1AjgY4pZPqiX5hCeH&ust=1696866428098000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPjd9Jbm5oEDFQAAAAAdAAAAABAQ",
+        "description": "Empanadas pino, mechada/queso, napolitana",
+        "urlImage" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Famasanderiamanjarescalama%2Fphotos%2Fa.353100831551602%2F856612431200437%2F%3Ftype%3D3&psig=AOvVaw2lCqL1AjgY4pZPqiX5hCeH&ust=1696866428098000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCPjd9Jbm5oEDFQAAAAAdAAAAABAQ",
         "active" : true
       },
       {
         "name" : "Cafe Expresso",
         "price" : 1400,
-        "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fes%2Fpng-yaqgu&psig=AOvVaw3je4QbNwL3R-PqyViMECoP&ust=1696866531378000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKigl8jm5oEDFQAAAAAdAAAAABAS",
+        "description": "Cafe 300 ml",
+        "urlImage" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pngegg.com%2Fes%2Fpng-yaqgu&psig=AOvVaw3je4QbNwL3R-PqyViMECoP&ust=1696866531378000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCKigl8jm5oEDFQAAAAAdAAAAABAS",
         "active" : true
       },
       {
         "name" : "Cafe Mediano",
         "price" : 1800,
-        "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.xsm.cl%2Fpedir%2Fcategory%2FLjDquHkrFFhBhjZjh%3FproductId%3DMuToARgHQkXPkMvq2%26page%3D1&psig=AOvVaw3WAIowAT218UZCaHw8QNwH&ust=1696866614286000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDw1e_m5oEDFQAAAAAdAAAAABAE",
+        "description": "Cafe 400 ml",
+        "urlImage" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.xsm.cl%2Fpedir%2Fcategory%2FLjDquHkrFFhBhjZjh%3FproductId%3DMuToARgHQkXPkMvq2%26page%3D1&psig=AOvVaw3WAIowAT218UZCaHw8QNwH&ust=1696866614286000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCMDw1e_m5oEDFQAAAAAdAAAAABAE",
         "active" : true
       },
       {
         "name" : "Cafe Grande",
         "price" : 2000,
-        "img" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fes%2Fvector%2Ftaza-realista-de-papel-de-caf%25C3%25A9-en-blanco-con-tapa-ilustraci%25C3%25B3n-vectorial-aislado-en-gm1311476229-400567798&psig=AOvVaw2p7LrFc_P8bZeYzFFY_j20&ust=1696866694268000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOiD8pXn5oEDFQAAAAAdAAAAABAJ",
+        "description": "Cafe 550 ml",
+        "urlImage" : "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fes%2Fvector%2Ftaza-realista-de-papel-de-caf%25C3%25A9-en-blanco-con-tapa-ilustraci%25C3%25B3n-vectorial-aislado-en-gm1311476229-400567798&psig=AOvVaw2p7LrFc_P8bZeYzFFY_j20&ust=1696866694268000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCOiD8pXn5oEDFQAAAAAdAAAAABAJ",
         "active" : true
       }
   ]
