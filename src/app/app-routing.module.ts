@@ -11,7 +11,7 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth/auth.module').then( m => m.AuthPageModule),// canActivate:[NoAuthGuard]
+    loadChildren: () => import('./auth/auth/auth.module').then( m => m.AuthPageModule), canActivate:[NoAuthGuard]
   },
   {
     path: 'products',
@@ -27,13 +27,12 @@ const routes: Routes = [
   },
   {
     path: 'pisos',
-    loadChildren: () => import('./pisos/pisos.module').then( m => m.PisosPageModule), //canActivate:[AuthGuard]
+    loadChildren: () => import('./pisos/pisos.module').then( m => m.PisosPageModule), canActivate:[AuthGuard]
   },
   {
     path: 'profile',
     loadChildren: () => import('./auth/main/profile/profile.module').then( m => m.ProfilePageModule)
   },
-
 
 
 ];

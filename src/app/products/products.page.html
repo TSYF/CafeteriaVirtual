@@ -1,9 +1,28 @@
-<ion-title class="ion-text-center" style="font-size: 1.5rem;">Productos</ion-title>
-<ion-list class="products">
-  <ion-item class="products__product" (click)="goToProductDetail(product)" *ngFor="let product of products">
-    <ion-thumbnail slot="start">
-      <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
-    </ion-thumbnail>
-    <ion-label>{{ product.name }} - {{ product.price | currency }}</ion-label>
-  </ion-item>
-</ion-list>
+<ion-content>
+    <ion-title class="ion-text-center" style="font-size: 1.5rem;">Productos</ion-title>
+    
+    <ion-list class="products">
+      <ion-item-sliding class="products-item" (click)="goToProductDetail(product)" *ngFor="let product of products">
+        <ion-item>
+          <ion-avatar slot="start">
+            <img [src]="product.urlImage" >
+          </ion-avatar>
+          <ion-label>
+            <div class="name">{{product.name}}</div>
+            <div class="data">
+              <strong>Precio:</strong> {{product.price | currency: 'USD'}} <br>
+              <strong>Activo:</strong> {{product.active}}
+            </div>
+          </ion-label>
+        </ion-item>
+        
+        <!-- ===== Opciones ====== -->
+        <ion-item-options>
+          <ion-item-option>
+            <ion-icon class="option-btn" name="add-outline"></ion-icon>
+          </ion-item-option>
+        </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductsService } from '../services/products.service';
 import { NavigationExtras, Router } from '@angular/router';
@@ -9,16 +9,29 @@ import { NavigationExtras, Router } from '@angular/router';
   styleUrls: ['./products.page.scss'],
 })
 export class ProductsPage implements OnInit {
+  
+  products: Product[] = [];
 
-  public products: Product[] = [];
+  constructor( 
+    private productsService: ProductsService, 
+    private router: Router 
+  ) {}
 
-  constructor(
-    private productsService: ProductsService,
-    private router:          Router
-  ) { }
+  async ngOnInit() {
+    // await this.productsService.getProducts().subscribe(
+    //   (data) => {
+    //     this.products = data
+    //   });
+    await this.getProducts();
+    
+  }
 
-  public ngOnInit(): void {
-    this.products = this.productsService.products;
+  getProducts(){
+    this.productsService.getProducts().subscribe(
+      (data) => {
+        this.products = data
+      });
+    
   }
 
   public goToProductDetail(product: Product) {
