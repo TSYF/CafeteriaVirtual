@@ -9,26 +9,24 @@ import { UtilsService } from './utils.service';
 })
 export class ProductsService {
 
-  utilSvc = inject(UtilsService);
+  private apiUrl = 'http://localhost:8080/api';
 
-  apiUrl = 'http://localhost:8080/api';
-
-  httpOptions = {
+  public httpOptions = {
     headers : new HttpHeaders({
       'Content-type': 'application/json',
       'Access-Control-Allow-Origin':'*'
     }) 
    }
 
-  constructor(private http: HttpClient) {
-
-  }
+  public constructor(
+    private http: HttpClient
+  ) {}
   
-  getProducts() : Observable< Product[] > {
+  public getProducts() : Observable< Product[] > {
     return this.http.get< Product[] >(this.apiUrl+'/products');
   }
 
-  getProductById(id:number){
+  public getProductById(id:number){
     return this.http.get<Product>(this.apiUrl+'/product/'+id)
   }
 
