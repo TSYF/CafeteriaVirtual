@@ -15,39 +15,37 @@ import { Storage } from '@ionic/storage-angular'; // import para crear metodos d
 
 export class AuthPage implements OnInit {
   
-  form = new FormGroup({
+  public form = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
     password: new FormControl('',[Validators.required]),
   })
 
-  firebaseSvc = inject(FirebaseService);
-  utilsSvc = inject(UtilsService);
+  
+  constructor(
+    private storage: Storage,
+    private firebaseService: FirebaseService,
+    private utilsService: UtilsService
+  ){}  //agregar Storage al constructor
 
-  constructor(private storage: Storage){  //agregar Storage al constructor
-
-  }
-
-  async ngOnInit() { //convertir el inicializador en asincrono
-
+  public async ngOnInit() { //convertir el inicializador en asincrono
     await this.storage.create();//Metodos de storage deben ser asincronos
-
   }  
 
-  async submit(){
+  public async submit(){
     if (this.form.valid) {
       
-      const loading = await this.utilsSvc.loading();
+      const loading = await this.utilsService.loading();
       await loading.present();
 
-      this.firebaseSvc.signIn(this.form.value as User).then(res => {
+      this.firebaseService.signIn(this.form.value as User).then(res => {
         
         this.getUserInfo(res.user.uid);
         console.log(res);
 
       }).catch(error => {
         // console.log(error);
-        this.utilsSvc.presentToast({
-          message: error.message,
+        this.utilsService.presentToast({
+          message: this.firebaseService.errorMessages[error.message] ?? error.message,
           duration: 3500,
           color: 'primary',
           position: 'middle',
@@ -59,34 +57,27 @@ export class AuthPage implements OnInit {
     }
 
   }
-  
-  //Guardar información en el storage
-  async saveInStorage(){
-    this.storage.set('nombreUsuario','Thony Funeke')
-    // this.storage.get('nombreUsuario','Sebastian')
-    
-  }
-  //Mostrar informacion del storage
-  async showStorage(){
-    let name = await this.storage.get("nombreUsuario");
-    console.log("El nombre guardado es: "+ name)
-  }
 
-  async getUserInfo(uid: string){
+  private async getUserInfo(uid: string){
     if (this.form.valid) {
       
-      const loading = await this.utilsSvc.loading();
+      const loading = await this.utilsService.loading();
       await loading.present();
       
-      let path ='users/${uid}';
+      let path = `users/${uid}`;
 
-      this.firebaseSvc.getDocument(path).then((user: User) => {
+      // const user = { name, email } = this.firebaseService.getDocument(path);
+      
+      this.firebaseService.getDocument(path).then((user: User) => {
 
-        this.utilsSvc.saveInLocaleStorage('user', user);
-        this.utilsSvc.routerLink('/pisos');
-        this.form.reset
-        this.utilsSvc.presentToast({
-          message: 'Bienvenido ${user.name}',
+        console.log(user);
+
+        this.utilsService.saveInLocaleStorage('user', user);
+        this.utilsService.routerLink('/pisos');
+        this.form.reset();
+
+        this.utilsService.presentToast({
+          message: `Bienvenido ${user.name}`,
           duration: 1500,
           color: 'primary',
           position: 'middle',
@@ -94,8 +85,8 @@ export class AuthPage implements OnInit {
         })
       }).catch(error => {
         console.log(error);
-        this.utilsSvc.presentToast({
-          message: error.message,
+        this.utilsService.presentToast({
+          message: this.firebaseService.errorMessages[error.message] ?? error.message,
           duration: 2500,
           color: 'primary',
           position: 'middle',

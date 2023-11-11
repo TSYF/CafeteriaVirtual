@@ -14,17 +14,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 // ==========Firebase===========
 
-import { AngularFireModule } from '@angular/fire/compat';
+// import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+// import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+// import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
-
-
-firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -34,12 +31,9 @@ firebase.initializeApp(environment.firebaseConfig);
     BrowserModule,
     IonicModule.forRoot({mode:'md'}),
     AppRoutingModule,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
     IonicStorageModule.forRoot(), // import de ionic storage
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule
   ],
   providers: [
     ProductsService,

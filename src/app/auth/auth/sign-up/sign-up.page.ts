@@ -18,8 +18,10 @@ export class SignUpPage implements OnInit {
     name: new FormControl('',[Validators.required, Validators.minLength(3)]),
   })
 
-  firebaseSvc = inject(FirebaseService);
-  utilsSvc = inject(UtilsService);
+  public constructor(
+    private firebaseService: FirebaseService,
+    private utilsService: UtilsService
+  ) {}
 
   ngOnInit() {
   }
@@ -27,12 +29,12 @@ export class SignUpPage implements OnInit {
   async submit(){
     if (this.form.valid) {
       
-      const loading = await this.utilsSvc.loading();
+      const loading = await this.utilsService.loading();
       await loading.present();
 
-      this.firebaseSvc.signUp(this.form.value as User).then(async res => {
+      this.firebaseService.signUp(this.form.value as User).then(async res => {
 
-        await  this.firebaseSvc.updateUser(this.form.value.name);
+        await  this.firebaseService.updateUser(this.form.value.name);
 
         let uid = res.user.uid;
         this.form.controls.uid.setValue(uid);
@@ -41,8 +43,8 @@ export class SignUpPage implements OnInit {
 
       }).catch(error => {
         console.log(error);
-        this.utilsSvc.presentToast({
-          message: error.message,
+        this.utilsService.presentToast({
+          message: this.firebaseService.errorMessages[error.message] ?? error.message,
           duration: 2500,
           color: 'primary',
           position: 'middle',
@@ -56,21 +58,23 @@ export class SignUpPage implements OnInit {
   async setUserInfo(uid: string){
     if (this.form.valid) {
       
-      const loading = await this.utilsSvc.loading();
+      const loading = await this.utilsService.loading();
       await loading.present();
       
-      let path ='users/${uid}';
+      let path = `users/${uid}`;
       delete this.form.value.password;
 
-      this.firebaseSvc.setDocument(path, this.form.value).then(async res => {
 
-        this.utilsSvc.saveInLocaleStorage('user', this.form.value);
-        this.utilsSvc.routerLink('/pisos');
-        this.form.reset
+      this.firebaseService.setDocument(path, this.form.value).then(async res => {
+        
+        this.utilsService.saveInLocaleStorage('user', this.form.value);
+        this.utilsService.routerLink('/pisos');
+        this.form.reset();
+
       }).catch(error => {
         console.log(error);
-        this.utilsSvc.presentToast({
-          message: error.message,
+        this.utilsService.presentToast({
+          message: this.firebaseService.errorMessages[error.message] ?? error.message,
           duration: 2500,
           color: 'primary',
           position: 'middle',

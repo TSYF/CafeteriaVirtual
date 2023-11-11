@@ -3,27 +3,23 @@ import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } fro
 import { Observable } from 'rxjs';
 import { FirebaseService } from '../services/firebase.service';
 import { UtilsService } from '../services/utils.service';
-@Injectable({
-  providedIn: 'root'
-})
-export class NoAuthGuard implements CanActivate {
 
-  firebaseSvc = inject(FirebaseService);
-  utilsSvc = inject(UtilsService);
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-  
-      return new Promise((resolve) => {
-        this.firebaseSvc.getAuth().onAuthStateChanged((auth) => {
+export function NoAuthGuard (
+  route: ActivatedRouteSnapshot,
+  state: RouterStateSnapshot
+): Promise<boolean | UrlTree> {
+    const firebaseSvc = inject(FirebaseService);
+    const utilsService = inject(UtilsService);
 
-          if(!auth) resolve(true);
-          else{
-            this.utilsSvc.routerLink('/pisos');
-            resolve(false);
-          }
-        })
-      });
-  }
+    return new Promise((resolve) => {
+      firebaseSvc.getAuth().onAuthStateChanged((auth) => {
+
+        if(!auth) resolve(true);
+        else{
+          utilsService.routerLink('/pisos');
+          resolve(false);
+        }
+      })
+    });
 }

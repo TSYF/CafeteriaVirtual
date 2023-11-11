@@ -31,7 +31,7 @@
             <div *ngIf="form.controls.password.errors?.['required']">La contraseña es requerida</div>
           </div>          
           
-          <p routerLink="forgot-password" class="ion-text-end">¿Olvidaste tu contraseña?</p>
+          <p routerLink="forgot-password" class="ion-text-end"><span class="pointer">¿Olvidaste tu contraseña?</span></p>
 
           <ion-button expand="block" class="submit" type="submit" [disabled]="form.invalid">
             Ingresar
@@ -44,7 +44,4 @@
           </ion-button>
         </form>
       </div>      
-
-      <ion-button (click)="saveInStorage()"> Guardar datos en storage </ion-button>
-      <ion-button (click)="showStorage()"> Ver datos en storage </ion-button>
 </ion-content>
