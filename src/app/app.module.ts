@@ -1,30 +1,22 @@
-import { IonicStorageModule } from '@ionic/storage-angular'; //import necesario para usar storage
-
-import { NgModule, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app'; // Nuevas importaciones para Firebase
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
 import { ProductsService } from './services/products.service';
-import { HttpClientModule } from '@angular/common/http';
-
-// ==========Firebase===========
-
-import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-
-
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
-
-
-firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   declarations: [
@@ -32,14 +24,14 @@ firebase.initializeApp(environment.firebaseConfig);
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot({mode:'md'}),
+    IonicModule.forRoot({ mode: 'md' }),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    IonicStorageModule.forRoot(), // import de ionic storage
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    AngularFirestoreModule
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)), // Inicialización de Firebase con Ivy
+    provideAuth(() => getAuth()), // Obtener el servicio de autenticación
+    provideFirestore(() => getFirestore()), // Obtener el servicio de Firestore
+    IonicStorageModule.forRoot(), // Import de Ionic Storage
   ],
   providers: [
     ProductsService,
@@ -50,8 +42,4 @@ firebase.initializeApp(environment.firebaseConfig);
   ],
   bootstrap: [AppComponent],
 })
-
-export class AppModule {
-
-    
-}
+export class AppModule {}
