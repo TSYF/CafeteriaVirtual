@@ -12,5 +12,23 @@
         &:hover {
             opacity: .8;
         }
+
     }
+}
+.add_product {
+
+    --border-radius: 3rem;
+    --background: #00FF00;
+    --color: white;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.button-column {
+    padding: 0;
+    width: fit-content;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right: 1em;
 }
